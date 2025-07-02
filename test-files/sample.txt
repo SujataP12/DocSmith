@@ -1,0 +1,21 @@
+This is a sample Word document for testing conversion.
+
+This document contains multiple paragraphs to test the conversion functionality.
+
+Features to test:
+- Multiple paragraphs
+- Different text formatting
+- Line breaks and spacing
+- Special characters: áéíóú, ñ, ü
+- Numbers: 123, 456.789
+- Symbols: @#$%^&*()
+
+This document should be converted to PDF while maintaining the structure and readability.
+
+The conversion process should handle:
+1. Text formatting
+2. Paragraph spacing
+3. Character encoding
+4. Page breaks when necessary
+
+End of test document.
