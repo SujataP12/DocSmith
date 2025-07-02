@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocSmith - Document Converter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-file-alt"></i>
+                <h1>DocSmith</h1>
+            </div>
+            <p class="subtitle">Professional Document Converter</p>
+        </header>
+
+        <main class="main-content">
+            <div class="converter-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-exchange-alt"></i> Convert Your Documents</h2>
+                    <p>Upload your file and choose the conversion type</p>
+                </div>
+
+                <form id="conversionForm" class="conversion-form">
+                    <div class="upload-section">
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div class="upload-text">
+                                <h3>Drag & Drop your file here</h3>
+                                <p>or <span class="browse-link">browse files</span></p>
+                                <small>Supported: PDF, DOCX, CSV (Max 50MB)</small>
+                            </div>
+                            <input type="file" id="fileInput" name="file" accept=".pdf,.docx,.doc,.csv" hidden>
+                        </div>
+                        
+                        <div class="file-info" id="fileInfo" style="display: none;">
+                            <div class="file-details">
+                                <i class="fas fa-file"></i>
+                                <div class="file-meta">
+                                    <span class="file-name" id="fileName"></span>
+                                    <span class="file-size" id="fileSize"></span>
+                                </div>
+                                <button type="button" class="remove-file" id="removeFile">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-options">
+                        <h3><i class="fas fa-cogs"></i> Conversion Type</h3>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="conversionType" value="pdf-to-word">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <i class="fas fa-file-word"></i>
+                                    </div>
+                                    <span>PDF to Word</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card">
+                                <input type="radio" name="conversionType" value="word-to-pdf">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-file-word"></i>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <span>Word to PDF</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card">
+                                <input type="radio" name="conversionType" value="csv-to-pdf">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-file-csv"></i>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <span>CSV to PDF</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card">
+                                <input type="radio" name="conversionType" value="pdf-to-csv">
+                                <div class="option-content">
+                                    <div class="option-icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <i class="fas fa-file-csv"></i>
+                                    </div>
+                                    <span>PDF to CSV</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="convert-btn" id="convertBtn" disabled>
+                        <i class="fas fa-magic"></i>
+                        Convert Document
+                    </button>
+                </form>
+
+                <div class="progress-section" id="progressSection" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Converting your document...</p>
+                </div>
+
+                <div class="result-section" id="resultSection" style="display: none;">
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Conversion Successful!</h3>
+                        <p>Your document has been converted successfully.</p>
+                        <a href="#" class="download-btn" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            Download Converted File
+                        </a>
+                        <button type="button" class="new-conversion-btn" id="newConversionBtn">
+                            <i class="fas fa-plus"></i>
+                            Convert Another File
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 DocSmith. Professional document conversion made simple.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
